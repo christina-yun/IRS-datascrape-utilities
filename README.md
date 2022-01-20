@@ -16,16 +16,16 @@ Python 3.10.0
     - Good: 'form 1040-ez', 'Form 1040-ez', 'Form 1040-EZ'
     - Bad: '1040-ez', '1040 ez', 'Form 1040 EZ'
 
-CLI Command:
+#### CLI Command:
 ``` 
     python -c 'import main; print(main.taxFormInfo(form_terms_array))'
 ```
-Input:
+#### Input:
 ```
     taxFormInfo(["form w-2", "form 1040", "form 1095-a"])
 ```
 
-Output:
+#### Output:
 ```
 [
     {
@@ -57,17 +57,17 @@ Output:
     - Bad: '1040-ez', '1040 ez', 'Form 1040 EZ'
 - The first_year and last_year terms are input as integers between 1864 and the current year inclusive.
 
-CLI Command
+#### CLI Command
 ```
     python -c 'import download; download.download_links(search_term, first_year, last_year)'
 ```
 
-Input
+#### Input
 ```
     download_links("form 56", 1991, 1998)
 ```
 
-Output
+#### Output
 - A new directory in the project
     - /Form 56
     - 3 files with the naming convention 'Form 56 - {year}'
