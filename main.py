@@ -1,10 +1,11 @@
+from unicodedata import name
 import requests
 from bs4 import BeautifulSoup
 
-def taxFormsForAllYears(search_terms):
+def taxFormInfo(search_terms):
     formatted_search_info = []
+
     for search_term in search_terms:
-        # search term has to be formatted like "Form+W-2"
         formatted_search_term = ""
 
         for char in search_term:
@@ -25,30 +26,28 @@ def taxFormsForAllYears(search_terms):
             'td', class_='LeftCellSpacer').text.strip()
         form_title = first_form.find(
             'td', class_='MiddleCellSpacer').text.strip()
-        min_year = first_form.find('td', class_='EndCellSpacer').text.strip()
+        min_year = int(first_form.find('td', class_='EndCellSpacer').text.strip())
 
         # Getting the last year
         html_text_desc = requests.get(results_desc).text
         soup_desc = BeautifulSoup(html_text_desc, 'lxml')
 
-        max_year_list = []
         latest_year_correct_form = soup_desc.find_all(
             'td', class_='LeftCellSpacer')
+
         for correct_year in latest_year_correct_form:
             if correct_year.text.lower().strip() == search_term.lower().strip():
-                max_year_list.append(correct_year.a['href'][-8:-4])
+                max_year = int(correct_year.a['href'][-8:-4])
+                break
 
         form_array_info = {
             'form_number': form_number,
             'form_title': form_title,
             'min_year': min_year,
-            'max_year': max_year_list[0]
+            'max_year': max_year
         }
 
         formatted_search_info.append(form_array_info)
 
     return formatted_search_info
-
-
-search_terms = ["form w-2", "form w-2vi", 'Form W-2AS']
-print(taxFormsForAllYears(search_terms))
+    
