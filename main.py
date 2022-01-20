@@ -1,4 +1,4 @@
-from unicodedata import name
+import json
 import requests
 from bs4 import BeautifulSoup
 
@@ -48,6 +48,8 @@ def taxFormInfo(search_terms):
         }
 
         formatted_search_info.append(form_array_info)
+        
+    json_formatted_search_info =json.dumps(formatted_search_info, indent=4)
 
-    return formatted_search_info
+    return json_formatted_search_info
     
