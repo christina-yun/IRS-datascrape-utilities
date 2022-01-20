@@ -60,5 +60,4 @@ def download_links(search_term, first_year, last_year):
     
 
     convert_links(all_doc_links, correct_form_name)
-
-download_links("form w-2g", 1991, 1993)
+    
