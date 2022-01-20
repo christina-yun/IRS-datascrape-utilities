@@ -16,6 +16,7 @@ In terminal:
 
 To download all the tax forms in a timeframe:
 In terminal:
-    ```
+```
     python -c 'import download; download.download_links(search_term, first_year, last_year)'
-    ```
+
+```
