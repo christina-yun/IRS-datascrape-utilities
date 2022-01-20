@@ -5,18 +5,15 @@ from bs4 import BeautifulSoup
 
 # Helper function for download_links
 def convert_links(download_links, form_name):
-    github_project_folder = '/assessment-for-pw/'
     directory = form_name
 
-    # will need to be changed depending on where file is located
-    parent_dir = '/Users/stina/Desktop/Python_exercises'
-    dirpath = os.path.join(parent_dir+github_project_folder, directory)
+    parent_dir = os.getcwd()
+    dirpath = os.path.join(parent_dir, directory)
 
     if os.path.exists(dirpath) and os.path.isdir(dirpath):
         shutil.rmtree(dirpath)
     
     os.mkdir(dirpath)
-    
     
     for link in download_links:
         req = requests.get(link)
@@ -63,3 +60,5 @@ def download_links(search_term, first_year, last_year):
     
 
     convert_links(all_doc_links, correct_form_name)
+
+download_links("form w-2g", 1991, 1993)
