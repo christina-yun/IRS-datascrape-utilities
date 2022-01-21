@@ -1,5 +1,12 @@
 # assessment-for-pw
 
+### Other notes and feedback
+- This might be strange to say but I really enjoyed doing this project because it was a lot of fun to put together. I really enjoyed organizing everything and seeing the utilities working correctly. Doing it made me all the more excited to be considered at Pinwheel!
+
+- Thank you for making this open-ended in terms of timing. I feel like I did much better work by not having it timed.
+
+- The only piece of feedback I have about the challenge itself would be that it would've been really nice to have a picture/example of the file structure for the second utility (downloading the tax forms). It took me awhile to realize that I needed the separate folder to also be named after the IRS form number.
+
 ### Libraries to install
 - pip install requests 
 - pip install beautifulsoup4
@@ -9,6 +16,8 @@
 Python 3.10.0 
 
 ### To get information about tax forms:
+- You will need to run a CLI command (as noted and exampled below)
+- It will return an array of JSON objects each with the form_number, form_title, min_year, and max_year in the command line.
 
 #### Format of 'form_terms_array'
 - The form_terms_array argument is an array of strings
@@ -53,6 +62,8 @@ Python 3.10.0
 ```
 
 ### To download tax forms in a given timeframe
+- You will need to run a CLI command (as noted and exampled below)
+- All files will be downloaded to a folder on the same level as the utils folder
 
 #### Format of 'search_term', first_year, last_year
 - The first_year and last_year terms are input as integers between 1864 and the current year inclusive.
