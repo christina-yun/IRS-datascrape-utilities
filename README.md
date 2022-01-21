@@ -21,9 +21,10 @@ Python 3.10.0
 
 #### Format of 'form_terms_array'
 - The form_terms_array argument is an array of strings
+- If you are running your own CLI command with custom inputs -- make sure that the strings in the form_terms_array are double-quoted or there will be parsing errors
 - Each string must be as written the way it's represented in 'Product Number' on IRS.gov website but can be upper or lower cased
-    - Good: 'form 1040-ez', 'Form 1040-ez', 'Form 1040-EZ'
-    - Bad: '1040-ez', '1040 ez', 'Form 1040 EZ'
+    - Good: "form 1040-ez", "Form 1040-ez", "Form 1040-EZ"
+    - Bad: "1040-ez", "1040 ez", "Form 1040 EZ"
 ```
     array [ string, string, string, etc.]
 ```
@@ -63,14 +64,15 @@ Python 3.10.0
 
 ### To download tax forms in a given timeframe
 - You will need to run a CLI command (as noted and exampled below)
+- If you are running your own CLI command with custom inputs -- make sure that the search_term string is double-quoted or there will be parsing errors
 - All files will be downloaded to a folder on the same level as the utils folder
 
 #### Format of 'search_term', first_year, last_year
 - The first_year and last_year terms are input as integers between 1864 and the current year inclusive.
 - first_year <= last_year
 - The search_term string must be input as written for 'Product Number' on IRS.gov website but can be upper or lower cased
-    - Good: 'form 1040-ez', 'Form 1040-ez', 'Form 1040-EZ'
-    - Bad: '1040-ez', '1040 ez', 'Form 1040 EZ'
+    - Good: "form 1040-ez", "Form 1040-ez", "Form 1040-EZ"
+    - Bad: "1040-ez", "1040 ez", "Form 1040 EZ"
 ```
     search_term = string
     first_year = 1864 <= int <= current year (2022)
