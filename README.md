@@ -1,7 +1,7 @@
 # assessment-for-pw
 
 ### Other notes and feedback
-- This might be strange to say but I really enjoyed doing this project because it was a lot of fun to put together. I really enjoyed organizing everything and seeing the utilities working correctly. Doing it made me all the more excited to be considered at Pinwheel!
+- This might be strange to say but I had a lot of fun putting this project together. I really enjoyed organizing everything and seeing the utilities working correctly. Doing it made me all the more excited to be considered at Pinwheel!
 
 - Thank you for making this open-ended in terms of timing. I feel like I did much better work by not having it timed.
 
