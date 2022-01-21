@@ -65,7 +65,6 @@ Python 3.10.0
 
 #### Input
 ```
-    python -c 'import download; download.download_links("form w-2", 1991, 2021)'
     download_links("form 56", 1991, 1998)
 ```
 

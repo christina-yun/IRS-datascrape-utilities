@@ -1,6 +1,5 @@
 import os
 import shutil
-import math
 import requests
 from bs4 import BeautifulSoup
 
