@@ -16,16 +16,17 @@ Python 3.10.0
     - Good: 'form 1040-ez', 'Form 1040-ez', 'Form 1040-EZ'
     - Bad: '1040-ez', '1040 ez', 'Form 1040 EZ'
 
-#### CLI Command:
+#### CLI Command Format:
 ``` 
     python -c 'import main; print(main.taxFormInfo(form_terms_array))'
 ```
-#### Input:
+#### Input Example:
 ```
+python -c 'import main; print(main.taxFormInfo(["form w-2", "form 1040", "form 1095-a"]))'
     taxFormInfo(["form w-2", "form 1040", "form 1095-a"])
 ```
 
-#### Output:
+#### Output Example:
 ```
 [
     {
@@ -52,24 +53,24 @@ Python 3.10.0
 ### To download tax forms in a given timeframe
 
 #### Format of 'search_term', first_year, last_year
+- The first_year and last_year terms are input as integers between 1864 and the current year inclusive.
+- first_year <= last_year
 - The search_term string must be input as written for 'Product Number' on IRS.gov website but can be upper or lower cased
     - Good: 'form 1040-ez', 'Form 1040-ez', 'Form 1040-EZ'
     - Bad: '1040-ez', '1040 ez', 'Form 1040 EZ'
-- The first_year and last_year terms are input as integers between 1864 and the current year inclusive.
- - first_year <= last_year
 
-#### CLI Command
+#### CLI Command Format
 ```
     python -c 'import download; download.download_links(search_term, first_year, last_year)'
 ```
 
-#### Input
+#### Input example
 ```
     download_links("form 56", 1991, 1998)
 ```
 
-#### Output
+#### Output example
 - A new directory in the project
     - /Form 56
-    - 3 files with the naming convention 'Form 56 - {year}'
+    - 3 pdf files with the naming convention 'Form 56 - {year}'
         - years: 1992, 1994, 1997

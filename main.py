@@ -2,6 +2,7 @@ import json
 import requests
 from bs4 import BeautifulSoup
 
+
 def taxFormInfo(search_terms):
     formatted_search_info = []
 
@@ -26,7 +27,8 @@ def taxFormInfo(search_terms):
             'td', class_='LeftCellSpacer').text.strip()
         form_title = first_form.find(
             'td', class_='MiddleCellSpacer').text.strip()
-        min_year = int(first_form.find('td', class_='EndCellSpacer').text.strip())
+        min_year = int(first_form.find(
+            'td', class_='EndCellSpacer').text.strip())
 
         # Getting the last year
         html_text_desc = requests.get(results_desc).text
@@ -48,8 +50,7 @@ def taxFormInfo(search_terms):
         }
 
         formatted_search_info.append(form_array_info)
-        
-    json_formatted_search_info =json.dumps(formatted_search_info, indent=4)
+
+    json_formatted_search_info = json.dumps(formatted_search_info, indent=4)
 
     return json_formatted_search_info
-    

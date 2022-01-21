@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 # Helper function for download_links
 def convert_links(download_links, form_name):
-    
+
     # Creates a new folder to store links in
     directory = form_name
     parent_dir = os.getcwd()
@@ -13,7 +13,7 @@ def convert_links(download_links, form_name):
 
     if os.path.exists(dirpath) and os.path.isdir(dirpath):
         shutil.rmtree(dirpath)
-    
+
     os.mkdir(dirpath)
 
     # Downloads each file to the folder
@@ -28,7 +28,7 @@ def convert_links(download_links, form_name):
                     f.write(chunk)
 
 
-def download_links(search_term, first_year, last_year, row_num = 0, all_doc_links = []):
+def download_links(search_term, first_year, last_year, row_num=0, all_doc_links=[]):
     formatted_search_term = ""
     correct_form_name = ''
 
@@ -44,7 +44,7 @@ def download_links(search_term, first_year, last_year, row_num = 0, all_doc_link
 
     forms = soup.findAll('tr')
     for form in forms:
-        form_name = form.find('td', class_ = 'LeftCellSpacer')
+        form_name = form.find('td', class_='LeftCellSpacer')
 
         if not form_name:
             pass
@@ -57,6 +57,7 @@ def download_links(search_term, first_year, last_year, row_num = 0, all_doc_link
                 if first_year <= year <= last_year:
                     all_doc_links.append(doc_link)
     
+    # Recursively moves through pagination to satisfy conditions
     if year < first_year or year < last_year:
         row_num += 200
         return download_links(search_term, first_year, last_year, row_num, all_doc_links)
