@@ -16,7 +16,7 @@
 Python 3.10.0 
 
 ### To get information about tax forms:
-- You will need to run a CLI command (as noted and exampled below)
+- You will need to run a CLI command from the 'assessment-for-pw' project file(as noted and exampled below)
 - It will return an array of JSON objects each with the form_number, form_title, min_year, and max_year in the command line.
 
 #### Format of 'form_terms_array'
@@ -63,7 +63,7 @@ Python 3.10.0
 ```
 
 ### To download tax forms in a given timeframe
-- You will need to run a CLI command (as noted and exampled below)
+- You will need to run a CLI command from the 'assessment-for-pw' project file(as noted and exampled below)
 - If you are running your own CLI command with custom inputs -- make sure that the search_term string is double-quoted or there will be parsing errors
 - All files will be downloaded to a folder on the same level as the utils folder
 
