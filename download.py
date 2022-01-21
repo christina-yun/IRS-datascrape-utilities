@@ -1,12 +1,14 @@
 import os
 import shutil
+import math
 import requests
 from bs4 import BeautifulSoup
 
 # Helper function for download_links
 def convert_links(download_links, form_name):
+    
+    # Creates a new folder to store links in
     directory = form_name
-
     parent_dir = os.getcwd()
     dirpath = os.path.join(parent_dir, directory)
 
@@ -14,7 +16,8 @@ def convert_links(download_links, form_name):
         shutil.rmtree(dirpath)
     
     os.mkdir(dirpath)
-    
+
+    # Downloads each file to the folder
     for link in download_links:
         req = requests.get(link)
         year = link[-8:-4]
@@ -26,11 +29,8 @@ def convert_links(download_links, form_name):
                     f.write(chunk)
 
 
-def download_links(search_term, first_year, last_year):
+def download_links(search_term, first_year, last_year, row_num = 0, all_doc_links = []):
     formatted_search_term = ""
-    # Still need a way to go through pagination
-    row_num = 0
-    all_doc_links = []
     correct_form_name = ''
 
     for char in search_term:
@@ -58,6 +58,8 @@ def download_links(search_term, first_year, last_year):
                 if first_year <= year <= last_year:
                     all_doc_links.append(doc_link)
     
+    if year < first_year or year < last_year:
+        row_num += 200
+        return download_links(search_term, first_year, last_year, row_num, all_doc_links)
 
     convert_links(all_doc_links, correct_form_name)
-    

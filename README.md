@@ -56,6 +56,7 @@ Python 3.10.0
     - Good: 'form 1040-ez', 'Form 1040-ez', 'Form 1040-EZ'
     - Bad: '1040-ez', '1040 ez', 'Form 1040 EZ'
 - The first_year and last_year terms are input as integers between 1864 and the current year inclusive.
+ - first_year <= last_year
 
 #### CLI Command
 ```
@@ -64,6 +65,7 @@ Python 3.10.0
 
 #### Input
 ```
+    python -c 'import download; download.download_links("form w-2", 1991, 2021)'
     download_links("form 56", 1991, 1998)
 ```
 
