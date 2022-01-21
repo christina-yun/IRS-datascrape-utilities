@@ -1,11 +1,4 @@
-# assessment-for-pw
-
-### Other notes and feedback
-- This might be strange to say but I had a lot of fun putting this project together. I really enjoyed organizing everything and seeing the utilities working correctly. Doing it made me all the more excited to be considered at Pinwheel!
-
-- Thank you for making this open-ended in terms of timing. I feel like I did much better work by not having it timed.
-
-- The only piece of feedback I have about the challenge itself would be that it would've been really nice to have a picture/example of the file structure for the second utility (downloading the tax forms). It took me awhile to realize that I needed the separate folder to also be named after the IRS form number.
+# IRS-datascrape-utilities
 
 ### Libraries to install
 - pip install requests 
