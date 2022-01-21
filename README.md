@@ -62,8 +62,8 @@ Python 3.10.0
     - Bad: '1040-ez', '1040 ez', 'Form 1040 EZ'
 ```
     search_term = string
-    first_year: int
-    last_year: first_year <= int
+    first_year = int
+    last_year = first_year <= int
 ```
 
 #### CLI Command Format
