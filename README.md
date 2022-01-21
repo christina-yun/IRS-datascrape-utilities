@@ -22,7 +22,7 @@ Python 3.10.0
 ```
 #### Input Example:
 ```
-    taxFormInfo(["form w-2", "form 1040", "form 1095-a"])
+    python -c 'from utils import main; print(main.taxFormInfo(["form w-2", "form 1040", "form 1095-a"]))'
 ```
 
 #### Output Example:
@@ -65,7 +65,7 @@ Python 3.10.0
 
 #### Input example
 ```
-    download_links("form 56", 1991, 1998)
+    python -c 'from utils import download; download.download_links("form 56", 1991, 1998)'
 ```
 
 #### Output example
