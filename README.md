@@ -15,6 +15,9 @@ Python 3.10.0
 - Each string must be as written the way it's represented in 'Product Number' on IRS.gov website but can be upper or lower cased
     - Good: 'form 1040-ez', 'Form 1040-ez', 'Form 1040-EZ'
     - Bad: '1040-ez', '1040 ez', 'Form 1040 EZ'
+```
+    array [ string, string, string, etc.]
+```
 
 #### CLI Command Format:
 ``` 
@@ -57,6 +60,11 @@ Python 3.10.0
 - The search_term string must be input as written for 'Product Number' on IRS.gov website but can be upper or lower cased
     - Good: 'form 1040-ez', 'Form 1040-ez', 'Form 1040-EZ'
     - Bad: '1040-ez', '1040 ez', 'Form 1040 EZ'
+```
+    search_term = string
+    first_year: int
+    last_year: first_year <= int
+```
 
 #### CLI Command Format
 ```
