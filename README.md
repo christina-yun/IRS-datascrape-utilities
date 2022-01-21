@@ -18,11 +18,10 @@ Python 3.10.0
 
 #### CLI Command Format:
 ``` 
-    python -c 'import main; print(main.taxFormInfo(form_terms_array))'
+    python -c 'from utils import main; print(main.taxFormInfo(form_terms_array))'
 ```
 #### Input Example:
 ```
-python -c 'import main; print(main.taxFormInfo(["form w-2", "form 1040", "form 1095-a"]))'
     taxFormInfo(["form w-2", "form 1040", "form 1095-a"])
 ```
 
@@ -61,7 +60,7 @@ python -c 'import main; print(main.taxFormInfo(["form w-2", "form 1040", "form 1
 
 #### CLI Command Format
 ```
-    python -c 'import download; download.download_links(search_term, first_year, last_year)'
+    python -c 'from utils import download; download.download_links(search_term, first_year, last_year)'
 ```
 
 #### Input example
